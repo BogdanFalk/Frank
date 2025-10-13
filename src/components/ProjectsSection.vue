@@ -212,6 +212,34 @@ export default defineComponent({
     
     const projects = ref([
       {
+        id: 0,
+        title: 'Portfolio\nWebsite',
+        name: 'Portfolio Website',
+        category: 'Personal Project',
+        image: '/Portofolio/portofolio (1).png',
+        images: [
+          '/Portofolio/portofolio (1).png',
+          '/Portofolio/portofolio (2).png',
+          '/Portofolio/portofolio (3).png'
+        ],
+        dateRange: 'October 2025 - Present',
+        description: 'A modern, responsive portfolio website built as a 5-hour intensive coding challenge to showcase my projects and skills. This project served as an opportunity to relearn Vue 3 from scratch and master the Quasar Framework, creating a sleek single-page application with smooth animations, dynamic project showcases, and an intuitive user interface. The challenge pushed me to rapidly adapt to new technologies while implementing best practices in modern web development, resulting in a performant and visually stunning portfolio that effectively communicates my expertise and professional journey.',
+        techStack: [
+          { name: 'Vue 3', icon: 'fab fa-vuejs' },
+          { name: 'Quasar', icon: 'widgets' },
+          { name: 'Vite', icon: 'bolt' },
+          { name: 'Vue Router', icon: 'route' },
+          { name: 'SCSS', icon: 'fab fa-sass' },
+          { name: 'EmailJS', icon: 'email' },
+          { name: 'Figma', icon: 'fab fa-figma' }
+        ],
+        challenges: 'The primary challenge was completing a fully-functional, polished portfolio within a strict 5-hour timeframe while simultaneously relearning Vue 3\'s Composition API and learning Quasar Framework from scratch. This required rapid problem-solving, efficient component architecture decisions, and mastering Quasar\'s extensive component library on the fly. Additionally, implementing responsive design, smooth animations, and ensuring cross-browser compatibility within the time constraint demanded focused execution and prioritization of features that would have the most impact on user experience.',
+        github: {
+          url: 'https://github.com/BogdanFalk/Frank',
+          disabled: false
+        }
+      },
+      {
         id: 1,
         title: 'ScaleMatters',
         name: 'ScaleMatters',
