@@ -1,0 +1,391 @@
+/* Technologies Section Styles */
+.technologies-container {
+  width: 100%;
+  min-height: 960px;
+  background: white;
+  padding: 80px 300px 120px;
+  
+  @media (max-width: 1920px) {
+    padding: 80px 100px 120px;
+  }
+  
+  @media (max-width: 1400px) {
+    padding: 80px 60px;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 60px 30px;
+  }
+}
+
+/* Header */
+.technologies-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 64px;
+}
+
+.technologies-label {
+  color: #171717;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+  font-style: italic;
+}
+
+.technologies-title {
+  color: #171717;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  text-transform: uppercase;
+  
+  @media (max-width: 768px) {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+/* Skills List */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.skill-row {
+  display: grid;
+  grid-template-columns: 545px 1fr 40px;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  
+  &:hover {
+    opacity: 0.8;
+  }
+  
+  @media (max-width: 1400px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.skill-title {
+  color: #171717;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 48px;
+  text-transform: uppercase;
+  transition: color 0.5s ease;
+  
+  &.highlighted {
+    color: #fb923c;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.skill-description {
+  color: rgba(23, 23, 23, 0.8);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  max-width: 545px;
+}
+
+.skill-toggle {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.4s ease;
+  pointer-events: none;
+  
+  svg {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  @media (max-width: 1400px) {
+    align-self: flex-end;
+  }
+}
+
+.skill-content {
+  margin-bottom: 32px;
+  margin-left: 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  max-width: 100%;
+  
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+}
+
+// Vue Transition classes for drawer animation
+.drawer-enter-active,
+.drawer-leave-active {
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.drawer-enter-from,
+.drawer-leave-to {
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(-30px);
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.drawer-enter-to,
+.drawer-leave-from {
+  opacity: 1;
+  max-height: 1500px;
+  transform: translateY(0);
+  margin-bottom: 32px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.skill-image {
+  width: 430px;
+  height: 180px;
+  object-fit: cover;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.separator-line {
+  width: 100%;
+  max-width: 1235px;
+  height: 2px;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-item.expanded {
+  .skill-description {
+    line-height: normal;
+  }
+}
+
+/* Tech Stack Layout - Two Column */
+.tech-stack-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* Tech Stack Styling */
+.tech-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  
+  @media (max-width: 768px) {
+    gap: 20px;
+  }
+}
+
+/* Icon Display Area - Organic Constellation Layout */
+.tech-icons-display {
+  position: relative;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.03), rgba(248, 113, 113, 0.03), rgba(168, 85, 247, 0.03));
+  border: 2px solid rgba(251, 146, 60, 0.1);
+  border-radius: 12px;
+  min-height: 550px;
+  
+  i {
+    position: absolute;
+    transition: all 0.3s ease;
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+    
+    &:active {
+      cursor: grabbing;
+      transition: none;
+    }
+    
+    &:hover:not(:active) {
+      transform: scale(1.2) !important;
+      z-index: 10;
+    }
+  }
+  
+  .draggable-icon {
+    cursor: grab;
+    
+    &:active {
+      cursor: grabbing;
+    }
+  }
+  
+  // Dynamic varying font sizes for visual interest (positions are set via JS)
+  i:nth-child(3n+1) {
+    font-size: 52px;
+  }
+  
+  i:nth-child(3n+2) {
+    font-size: 44px;
+  }
+  
+  i:nth-child(3n) {
+    font-size: 38px;
+  }
+  
+  i:nth-child(5n+1) {
+    font-size: 56px;
+  }
+  
+  i:nth-child(7n+2) {
+    font-size: 50px;
+  }
+  
+  @media (max-width: 1400px) {
+    min-height: 480px;
+    padding: 35px;
+    
+    i {
+      font-size: 38px !important;
+      
+      &:nth-child(3n+1) {
+        font-size: 44px !important;
+      }
+      
+      &:nth-child(5n+1) {
+        font-size: 48px !important;
+      }
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    min-height: 400px;
+    padding: 30px;
+    
+    i {
+      font-size: 32px !important;
+      
+      &:nth-child(3n+1) {
+        font-size: 38px !important;
+      }
+      
+      &:nth-child(5n+1) {
+        font-size: 42px !important;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    min-height: 350px;
+    padding: 20px;
+    
+    i {
+      font-size: 28px !important;
+      
+      &:nth-child(3n+1) {
+        font-size: 32px !important;
+      }
+      
+      &:nth-child(5n+1) {
+        font-size: 36px !important;
+      }
+    }
+  }
+}
+
+.tech-category {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tech-category-title {
+  color: #171717;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  margin-bottom: 4px;
+  
+  @media (max-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.tech-item {
+  color: #171717;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  
+  @media (max-width: 768px) {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+.tech-label {
+  font-weight: 600;
+  color: rgba(23, 23, 23, 0.9);
+}
+
+.tech-value {
+  color: rgba(23, 23, 23, 0.8);
+}
+
+.tech-subitem {
+  color: rgba(23, 23, 23, 0.8);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  padding-left: 16px;
+  
+  &::before {
+    content: '';
+    margin-right: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 14px;
+    line-height: 22px;
+    padding-left: 12px;
+  }
+}
+

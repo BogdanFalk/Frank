@@ -1,0 +1,29 @@
+{
+  "name": "frank-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website built with Vue and Quasar",
+  "productName": "Frank Portfolio",
+  "author": "Frank",
+  "private": true,
+  "scripts": {
+    "dev": "quasar dev",
+    "build": "quasar build",
+    "build:pwa": "quasar build -m pwa"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@quasar/extras": "^1.16.12",
+    "quasar": "^2.18.5",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@quasar/app-vite": "^2.0.2",
+    "@rollup/rollup-win32-x64-msvc": "^4.52.4",
+    "autoprefixer": "^10.4.20"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">= 8.0.0"
+  }
+}

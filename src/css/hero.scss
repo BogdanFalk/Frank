@@ -1,0 +1,400 @@
+/* Hero Section Styles */
+.hero-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 300px;
+  gap: 100px;
+  
+  @media (max-width: 1920px) {
+    padding: 0 100px;
+    gap: 60px;
+  }
+  
+  @media (max-width: 1600px) {
+    padding: 0 80px;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 0 30px;
+  }
+}
+
+/* Decorative Gradient Shape */
+.decorative-gradient-shape {
+  position: absolute;
+  left: 250px;
+  top: 180px;
+  z-index: 0;
+  opacity: 0.9;
+
+  @media (min-width: 2000px) {
+    left: 250px;
+    top: 350px;
+  }
+  
+  @media (max-width: 1920px) {
+    left: 80px;
+    top: 250px;
+  }
+  
+  @media (max-width: 1600px) {
+    left: 50px;
+    top: 120px;
+    
+    svg {
+      width: 180px;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    left: 20px;
+    top: 80px;
+    
+    svg {
+      width: 150px;
+      height: auto;
+    }
+  }
+}
+
+/* Image Group - keeps image and decorations together */
+.image-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 45px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Profile Image */
+.profile-image {
+  width: 665px;
+  height: 750px;
+  object-fit: contain;
+}
+
+/* Content Area */
+.content-area {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  position: relative;
+  z-index: 1;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.main-title {
+  width: 687px;
+  color: #171717;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 96px;
+  line-height: 90px;
+  text-transform: uppercase;
+  
+  @media (max-width: 1920px) {
+    font-size: 80px;
+    line-height: 76px;
+    width: 580px;
+  }
+}
+
+.main-title-normal {
+  font-weight: 400;
+}
+
+.main-title-medium {
+  font-weight: 500;
+}
+
+.main-title-bold {
+  font-weight: 700;
+}
+
+.subtitle {
+  width: 545px;
+  color: #171717;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 30px;
+  line-height: 2;
+  
+  @media (max-width: 1920px) {
+    font-size: 26px;
+    width: 480px;
+  }
+}
+
+.italic {
+  font-style: italic;
+}
+
+.subtitle-bold {
+  font-weight: 700;
+}
+
+.subtitle-medium {
+  font-weight: 500;
+}
+
+.subtitle-normal {
+  font-weight: 400;
+}
+
+.cta-button {
+  height: 56px;
+  width: 249px;
+  padding: 16px 40px;
+  background: #171717;
+  color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  
+  &:hover {
+    background: #404040;
+    transform: translateY(-2px);
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.button-text {
+  color: white;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.button-icon {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(to left, #fb923c, #f87171, #a855f7);
+  overflow: hidden;
+  
+  .icon-inner {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: 4.2px;
+    top: 4.8px;
+    background: white;
+  }
+}
+
+/* Contact Info */
+.contact-info {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+/* Right Side Decorations */
+.right-decorations {
+  position: relative;
+  width: 40px;
+  height: 320px;
+  margin-top: 267px;
+  flex-shrink: 0;
+  
+  .decoration-circle {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 0;
+    
+    &.top {
+      top: 0;
+    }
+    
+    &.middle {
+      top: 60px;
+    }
+    
+    &.bottom {
+      top: 120px;
+    }
+  }
+  
+  .decoration-logo {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    left: 3px;
+    top: 2px;
+  }
+  
+  .decoration-github {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 10px;
+    top: 70px;
+  }
+  
+  .decoration-linkedin {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 10px;
+    top: 130px;
+  }
+  
+  .decoration-line {
+    position: absolute;
+    width: 2px;
+    height: 131px;
+    left: 23px;
+    top: 185px;
+  }
+}
+
+.contact-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+  
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
+
+.contact-icon {
+  width: 32px;
+  height: 32px;
+  background: rgba(23, 23, 23, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-text {
+  color: #171717;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: normal;
+  
+  &.italic {
+    font-style: italic;
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 1600px) {
+  .hero-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    padding: 80px 20px;
+    justify-content: center;
+  }
+  
+  .content-area {
+    max-width: 1200px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .main-title {
+    width: auto;
+    font-size: clamp(48px, 8vw, 96px);
+    line-height: 1.1;
+  }
+  
+  .subtitle {
+    width: auto;
+    font-size: clamp(20px, 3vw, 30px);
+  }
+  
+  .image-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .profile-image {
+    width: 400px;
+    height: 400px;
+  }
+  
+  .right-decorations {
+    margin-top: 0;
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 40px 20px;
+  }
+  
+  .content-area {
+    gap: 32px;
+  }
+  
+  .text-content {
+    gap: 24px;
+  }
+  
+  .contact-info {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  .profile-image {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .main-title {
+    font-size: clamp(32px, 10vw, 48px);
+  }
+  
+  .subtitle {
+    font-size: clamp(16px, 4vw, 20px);
+  }
+  
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
