@@ -547,3 +547,36 @@
   user-select: none;
 }
 
+// More Projects Note
+.more-projects-note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+  .note-text {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+    position: relative;
+  }
+  
+  @media (max-width: 768px) {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    
+    .note-text {
+      font-size: 14px;
+      
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+

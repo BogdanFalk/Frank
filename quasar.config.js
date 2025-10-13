@@ -29,6 +29,14 @@ export default configure(function (/* ctx */) {
       
       publicPath: '/',
       
+      // Add cache busting
+      filenames: {
+        app: 'js/app-[hash].js',
+        chunk: 'js/[name]-[hash].js',
+        css: 'css/[name]-[hash].css',
+        img: 'img/[name]-[hash].[ext]'
+      },
+      
       env: {
         SITE_NAME: 'Frank Portfolio'
       },

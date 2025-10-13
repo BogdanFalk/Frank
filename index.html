@@ -1,20 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title><%= productName %></title>
 
+    <!-- Basic Meta Tags -->
     <meta charset="utf-8">
     <meta name="description" content="<%= productDescription %>">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width<% if (ctx.mode.cordova || ctx.mode.capacitor) { %>, viewport-fit=cover<% } %>">
 
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="Bogdan Falk, Software Engineer, Full Stack Developer, React, Vue.js, Node.js, Python, JavaScript, Portfolio, Web Development, Mobile Development, AI, Machine Learning, Unity, Game Development">
+    <meta name="author" content="Bogdan Falk">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://frank-portfolio.com/">
+    <meta property="og:title" content="Bogdan Falk - Software Engineer Portfolio">
+    <meta property="og:description" content="Full-stack software engineer specializing in React, Vue.js, Node.js, and AI development. Explore my projects including AIVA AI assistant, ScaleMatters analytics platform, and interactive mobile apps.">
+    <meta property="og:image" content="https://frank-portfolio.com/photo.png">
+    <meta property="og:site_name" content="Bogdan Falk Portfolio">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://frank-portfolio.com/">
+    <meta property="twitter:title" content="Bogdan Falk - Software Engineer Portfolio">
+    <meta property="twitter:description" content="Full-stack software engineer specializing in React, Vue.js, Node.js, and AI development. Explore my projects including AIVA AI assistant, ScaleMatters analytics platform, and interactive mobile apps.">
+    <meta property="twitter:image" content="https://frank-portfolio.com/photo.png">
+
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Bogdan Falk">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://frank-portfolio.com/">
+
+    <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="128x128" href="icons/favicon-128x128.png">
     <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
     <link rel="icon" type="image/ico" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- External Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Bogdan Falk",
+      "jobTitle": "Software Engineer",
+      "description": "Full-stack software engineer specializing in React, Vue.js, Node.js, and AI development",
+      "url": "https://frank-portfolio.com",
+      "image": "https://frank-portfolio.com/photo.png",
+      "sameAs": [
+        "https://github.com/BogdanFalk",
+        "https://linkedin.com/in/bogdan-falk"
+      ],
+      "knowsAbout": [
+        "React",
+        "Vue.js", 
+        "Node.js",
+        "Python",
+        "JavaScript",
+        "AI Development",
+        "Machine Learning",
+        "Unity",
+        "Game Development",
+        "Mobile Development"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Software Engineer",
+        "description": "Full-stack developer with expertise in web and mobile applications"
+      }
+    }
+    </script>
   </head>
   <body>
     <!-- quasar:entry-point -->

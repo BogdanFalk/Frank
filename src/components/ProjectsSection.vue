@@ -47,6 +47,11 @@
       </div>
     </button>
 
+    <!-- More Projects Note -->
+    <div v-if="!hasMoreProjects" class="more-projects-note">
+      <div class="note-text">And some more projects behind the scenes...</div>
+    </div>
+
     <!-- Project Details Dialog -->
     <q-dialog 
       v-model="showDialog" 

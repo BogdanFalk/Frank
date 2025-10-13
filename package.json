@@ -1,9 +1,9 @@
 {
-  "name": "frank-portfolio",
+  "name": "bogdan-falk-portfolio",
   "version": "1.0.0",
-  "description": "Portfolio website built with Vue and Quasar",
-  "productName": "Frank Portfolio",
-  "author": "Frank",
+  "description": "Bogdan Falk - Full-stack Software Engineer Portfolio. Specializing in React, Vue.js, Node.js, Python, AI development, and mobile applications.",
+  "productName": "Bogdan Falk Portfolio",
+  "author": "Bogdan Falk",
   "private": true,
   "scripts": {
     "dev": "quasar dev",
