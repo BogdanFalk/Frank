@@ -7,8 +7,11 @@
         <div class="experience-title">My experience</div>
       </div>
       <div class="experience-bio">
-        Hello there! My name is Bogdan Falk.<br/>
-I’m a software engineer with a strong passion for web and game development, always focused on building meaningful and high-quality digital experiences.
+        Hi! I’m Alex.<br />
+        I’m a writer and aspiring pixel artist with a background in English and
+        French studies. I’ve built a foundation in HTML, CSS, JavaScript, and
+        React, and I’ve also worked with WordPress on various collaborative
+        projects.
       </div>
     </div>
 
@@ -20,8 +23,15 @@ I’m a software engineer with a strong passion for web and game development, al
           <div class="company-name">-Digital Garden</div>
         </div>
         <div class="position-title">Full Stack Engineer</div>
-        <svg class="separator-line" width="546" height="2" viewBox="0 0 546 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path opacity="0.2" d="M0.666504 1H545.667" stroke="white"/>
+        <svg
+          class="separator-line"
+          width="546"
+          height="2"
+          viewBox="0 0 546 2"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path opacity="0.2" d="M0.666504 1H545.667" stroke="white" />
         </svg>
       </div>
 
@@ -31,8 +41,15 @@ I’m a software engineer with a strong passion for web and game development, al
           <div class="company-name">-Unseen Media</div>
         </div>
         <div class="position-title">Owner / Game Developer</div>
-        <svg class="separator-line" width="546" height="2" viewBox="0 0 546 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path opacity="0.2" d="M0.666504 1H545.667" stroke="white"/>
+        <svg
+          class="separator-line"
+          width="546"
+          height="2"
+          viewBox="0 0 546 2"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path opacity="0.2" d="M0.666504 1H545.667" stroke="white" />
         </svg>
       </div>
 
@@ -42,8 +59,15 @@ I’m a software engineer with a strong passion for web and game development, al
           <div class="company-name">-Continental Automotive</div>
         </div>
         <div class="position-title">Software Developer</div>
-        <svg class="separator-line" width="546" height="2" viewBox="0 0 546 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path opacity="0.2" d="M0.666504 1H545.667" stroke="white"/>
+        <svg
+          class="separator-line"
+          width="546"
+          height="2"
+          viewBox="0 0 546 2"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path opacity="0.2" d="M0.666504 1H545.667" stroke="white" />
         </svg>
       </div>
     </div>
@@ -51,9 +75,9 @@ I’m a software engineer with a strong passion for web and game development, al
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'AboutSection'
-})
+  name: "AboutSection",
+});
 </script>
