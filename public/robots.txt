@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://frank-portfolio.com/sitemap.xml
+Sitemap: https://alexandra.unseenmedia.ro/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1

@@ -22,9 +22,9 @@
             y2="150.04"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#FFB147" />
-            <stop offset="0.520264" stop-color="#FF6C63" />
-            <stop offset="1" stop-color="#B86ADF" />
+            <stop stop-color="#1e3a8a" />
+            <stop offset="0.520264" stop-color="#2563eb" />
+            <stop offset="1" stop-color="#14b8a6" />
           </linearGradient>
         </defs>
       </svg>
@@ -74,7 +74,7 @@
     <!-- Image Group (stays together) -->
     <div class="image-group">
       <!-- Profile Image with all decorations -->
-      <img class="profile-image" src="/photo.png" alt="Bogdan Falk" />
+      <img class="profile-image" src="/photo.png" alt="Alexandra Sicoe" />
 
       <!-- Right Side Decorative Elements -->
       <div class="right-decorations">

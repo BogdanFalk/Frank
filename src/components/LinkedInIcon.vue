@@ -1,6 +1,6 @@
 <template>
   <a 
-    href="https://www.linkedin.com/in/bogdan-falk-b6263a146/" 
+    href="https://www.linkedin.com/in/alexandra-sicoe-9074661b2/" 
     target="_blank" 
     rel="noopener noreferrer"
     class="social-icon-link"

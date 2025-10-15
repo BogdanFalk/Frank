@@ -38,9 +38,9 @@
           <path d="M8.99922 4.80078V6.72078H15.3256L4.19922 17.8472L5.55282 19.2008L16.6792 8.07438V14.4008H18.5992V4.80078H8.99922Z" fill="white"/>
           <defs>
             <linearGradient id="paint0_linear_projects" x1="22.638" y1="16.8886" x2="1.86848" y2="16.8323" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FFB147"/>
-              <stop offset="0.520264" stop-color="#FF6C63"/>
-              <stop offset="1" stop-color="#B86ADF"/>
+              <stop stop-color="#1e3a8a"/>
+              <stop offset="0.520264" stop-color="#2563eb"/>
+              <stop offset="1" stop-color="#14b8a6"/>
             </linearGradient>
           </defs>
         </svg>
@@ -705,24 +705,43 @@ export default defineComponent({
       }
     ])
     
+    /**
+     * Computed property that returns the currently visible projects
+     * based on the visibleCount value
+     */
     const visibleProjects = computed(() => {
       return projects.value.slice(0, visibleCount.value)
     })
     
+    /**
+     * Computed property that determines if there are more projects
+     * available to load
+     */
     const hasMoreProjects = computed(() => {
       return visibleCount.value < projects.value.length
     })
     
+    /**
+     * Increases the number of visible projects by 4
+     */
     const loadMore = () => {
       visibleCount.value += 4
     }
 
+    /**
+     * Opens the project details dialog
+     * @param {Object} project - The project object to display
+     */
     const openProjectDialog = (project) => {
       selectedProject.value = project
       slide.value = 0
       showDialog.value = true
     }
 
+    /**
+     * Opens an image in fullscreen mode
+     * @param {String} image - The image URL to display
+     */
     const openFullscreenImage = (image) => {
       fullscreenImage.value = image
       showFullscreenImage.value = true

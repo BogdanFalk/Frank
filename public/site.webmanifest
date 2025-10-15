@@ -1,11 +1,11 @@
 {
-  "name": "Bogdan Falk - Software Engineer Portfolio",
-  "short_name": "Bogdan Falk",
-  "description": "Full-stack software engineer specializing in React, Vue.js, Node.js, and AI development",
+  "name": "Alexandra Sicoe - Software Engineer Portfolio",
+  "short_name": "Alexandra Sicoe",
+  "description": "Pixel artist, copywriter, and SEO specialist specializing in design, language and technology",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#667eea",
+  "theme_color": "#1e3a8a",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -24,7 +24,7 @@
       "type": "image/png"
     }
   ],
-  "categories": ["portfolio", "developer", "software engineer"],
+  "categories": ["portfolio", "developer", "pixel artist", "copywriter", "seo specialist"],
   "lang": "en",
   "scope": "/",
   "prefer_related_applications": false
