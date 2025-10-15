@@ -8,10 +8,10 @@ $negative: #ef4444;
 $info: #3b82f6;
 $warning: #f59e0b;
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=IBM+Plex+Serif:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=IBM+Plex+Serif:wght@700&display=swap");
 
 body {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 .gradient-text {
@@ -25,7 +25,7 @@ body {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  
+
   @media (max-width: 600px) {
     font-size: 2rem;
   }
@@ -46,14 +46,20 @@ body {
 }
 
 @keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .hover-lift {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
@@ -64,7 +70,7 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  
+
   &#hero {
     display: block;
     height: 100vh;
@@ -79,7 +85,7 @@ body {
       max-width: none !important;
       padding: 16px !important;
     }
-    
+
     .q-dialog__inner--minimized > div {
       max-width: none !important;
     }
@@ -87,10 +93,9 @@ body {
 }
 
 // Import component styles
-@import './sidebar.scss';
-@import './hero.scss';
-@import './experience.scss';
-@import './technologies.scss';
-@import './projects.scss';
-@import './contact.scss';
-
+@import "./sidebar.scss";
+@import "./hero.scss";
+@import "./experience.scss";
+@import "./technologies.scss";
+@import "./projects.scss";
+@import "./contact.scss";

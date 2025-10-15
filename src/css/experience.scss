@@ -2,7 +2,8 @@
 .experience-container {
   width: 100%;
   min-height: 632px;
-  background: linear-gradient(to left, #fb923c, #f87171, #a855f7);
+  background: linear-gradient(to left, #1e3a8a, #2563eb, #14b8a6);
+
   padding: 120px 300px;
   display: flex;
   justify-content: space-between;
@@ -11,13 +12,13 @@
   @media (max-width: 1920px) {
     padding: 120px 100px;
   }
-  
+
   @media (max-width: 1400px) {
     flex-direction: column;
     gap: 60px;
     padding: 80px 60px;
   }
-  
+
   @media (max-width: 768px) {
     padding: 60px 30px;
     gap: 40px;
@@ -27,7 +28,7 @@
 /* Left Side Content */
 .experience-left {
   flex: 0 0 520px;
-  
+
   @media (max-width: 1400px) {
     flex: 1;
     max-width: 100%;
@@ -43,7 +44,7 @@
 
 .experience-label {
   color: white;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 24px;
@@ -52,12 +53,12 @@
 
 .experience-title {
   color: white;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
   text-transform: uppercase;
-  
+
   @media (max-width: 768px) {
     font-size: 36px;
     line-height: 44px;
@@ -66,12 +67,12 @@
 
 .experience-bio {
   color: white;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   max-width: 520px;
-  
+
   @media (max-width: 768px) {
     font-size: 16px;
     line-height: 24px;
@@ -98,7 +99,7 @@
   align-items: center;
   width: 100%;
   max-width: 545px;
-  
+
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
@@ -108,7 +109,7 @@
 
 .date-range {
   color: white;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: normal;
@@ -117,7 +118,7 @@
 
 .company-name {
   color: white;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: normal;
@@ -126,13 +127,13 @@
 
 .position-title {
   color: white;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 30px;
   font-weight: 700;
   line-height: 48px;
   text-transform: uppercase;
   max-width: 545px;
-  
+
   @media (max-width: 768px) {
     font-size: 24px;
     line-height: 36px;
@@ -143,9 +144,8 @@
   width: 100%;
   max-width: 546px;
   height: 2px;
-  
+
   @media (max-width: 768px) {
     max-width: 100%;
   }
 }
-
