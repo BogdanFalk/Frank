@@ -22,8 +22,25 @@
     <div class="experience-right">
       <div class="experience-item">
         <div class="experience-header-row">
-          <div class="date-range">-Jun 2023 - Jan 2025</div>
-          <div class="company-name">-Digital Garden</div>
+          <div class="date-range">-Mar 2025- Present</div>
+          <div class="company-name">-Unseen media</div>
+        </div>
+        <div class="position-title">Pixel Artist</div>
+        <svg
+          class="separator-line"
+          width="546"
+          height="2"
+          viewBox="0 0 546 2"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path opacity="0.2" d="M0.666504 1H545.667" stroke="white" />
+        </svg>
+      </div>
+      <div class="experience-item">
+        <div class="experience-header-row">
+          <div class="date-range">-Jun 2024- Jan 2025</div>
+          <div class="company-name">-Freelance</div>
         </div>
         <div class="position-title">Junior Web Developer</div>
         <svg
@@ -41,7 +58,7 @@
       <div class="experience-item">
         <div class="experience-header-row">
           <div class="date-range">-Jan 2021 - Jul 2022</div>
-          <div class="company-name">-Unseen Media</div>
+          <div class="company-name">-Freelance</div>
         </div>
         <div class="position-title">
           Dropshipping Operations Coordinator
