@@ -37,66 +37,25 @@
                   <div class="tech-category-title">💻 Frontend Development</div>
                   <div class="tech-item">
                     <span class="tech-label">Core:</span>
-                    <span class="tech-value"
-                      >HTML, CSS, SCSS, JavaScript, TypeScript</span
-                    >
+                    <span class="tech-value">HTML, CSS, JavaScript</span>
                   </div>
                   <div class="tech-item">
                     <span class="tech-label">Frameworks & Libraries:</span>
-                    <span class="tech-value">React, Next.js, Vue, Redux</span>
+                    <span class="tech-value">React</span>
                   </div>
                   <div class="tech-item">
                     <span class="tech-label">Styling & UI:</span>
-                    <span class="tech-value">Tailwind CSS, Material UI</span>
+                    <span class="tech-value">Material UI, Joy UI</span>
                   </div>
                   <div class="tech-item">
                     <span class="tech-label">CMS & Site Builders:</span>
-                    <span class="tech-value">WordPress, Webflow</span>
-                  </div>
-                </div>
-
-                <div class="tech-category">
-                  <div class="tech-category-title">⚙️ Backend Development</div>
-                  <div class="tech-item">
-                    <span class="tech-label">Languages & Frameworks:</span>
-                  </div>
-                  <div class="tech-subitem">Java → Spring Boot</div>
-                  <div class="tech-subitem">
-                    JavaScript/TypeScript → Node.js, Express.js, NestJS
-                  </div>
-                  <div class="tech-subitem">
-                    Python → Django, AWS Lambda (serverless)
-                  </div>
-                  <div class="tech-subitem">C# → ASP.NET Core</div>
-                  <div class="tech-item">
-                    <span class="tech-label">Headless CMS / API Builders:</span>
-                    <span class="tech-value">Strapi</span>
-                  </div>
-                  <div class="tech-item">
-                    <span class="tech-label">API Architectures:</span>
-                    <span class="tech-value">REST API, GraphQL</span>
+                    <span class="tech-value">WordPress</span>
                   </div>
                 </div>
 
                 <div class="tech-category">
                   <div class="tech-category-title">🗄️ Databases</div>
-                  <div class="tech-value">MongoDB, MySQL, PostgreSQL</div>
-                </div>
-
-                <div class="tech-category">
-                  <div class="tech-category-title">
-                    🧰 DevOps / Infrastructure / Tooling
-                  </div>
-                  <div class="tech-value">
-                    Linux, Docker, Nginx, CI/CD (GitHub Actions)
-                  </div>
-                </div>
-
-                <div class="tech-category">
-                  <div class="tech-category-title">
-                    🧪 Testing & Quality Assurance
-                  </div>
-                  <div class="tech-value">Mocha, Chai, Selenium</div>
+                  <div class="tech-value">MongoDB</div>
                 </div>
               </div>
 
@@ -123,13 +82,7 @@
                   @mousedown="startDrag($event, $event.target)"
                   @touchstart="startDrag($event, $event.target)"
                 ></i>
-                <i
-                  class="devicon-sass-original colored draggable-icon"
-                  :style="getIconStyle('webDev', 2)"
-                  title="SCSS"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
+
                 <i
                   class="devicon-javascript-plain colored draggable-icon"
                   :style="getIconStyle('webDev', 3)"
@@ -137,13 +90,7 @@
                   @mousedown="startDrag($event, $event.target)"
                   @touchstart="startDrag($event, $event.target)"
                 ></i>
-                <i
-                  class="devicon-typescript-plain colored draggable-icon"
-                  :style="getIconStyle('webDev', 4)"
-                  title="TypeScript"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
+
                 <i
                   class="devicon-react-original colored draggable-icon"
                   :style="getIconStyle('webDev', 5)"
@@ -151,34 +98,7 @@
                   @mousedown="startDrag($event, $event.target)"
                   @touchstart="startDrag($event, $event.target)"
                 ></i>
-                <i
-                  class="devicon-nextjs-plain draggable-icon"
-                  :style="getIconStyle('webDev', 6)"
-                  title="Next.js"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-vuejs-plain colored draggable-icon"
-                  :style="getIconStyle('webDev', 7)"
-                  title="Vue"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-redux-original colored draggable-icon"
-                  :style="getIconStyle('webDev', 8)"
-                  title="Redux"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-tailwindcss-original colored draggable-icon"
-                  :style="getIconStyle('webDev', 9)"
-                  title="Tailwind CSS"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
+
                 <i
                   class="devicon-materialui-plain colored draggable-icon"
                   :style="getIconStyle('webDev', 10)"
@@ -193,143 +113,11 @@
                   @mousedown="startDrag($event, $event.target)"
                   @touchstart="startDrag($event, $event.target)"
                 ></i>
-                <i
-                  class="devicon-java-plain colored draggable-icon"
-                  :style="getIconStyle('webDev', 12)"
-                  title="Java"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-spring-original colored draggable-icon"
-                  :style="getIconStyle('webDev', 13)"
-                  title="Spring Boot"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-nodejs-plain colored draggable-icon"
-                  :style="getIconStyle('webDev', 14)"
-                  title="Node.js"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-express-original draggable-icon"
-                  :style="getIconStyle('webDev', 15)"
-                  title="Express.js"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-nestjs-original colored draggable-icon"
-                  :style="getIconStyle('webDev', 16)"
-                  title="NestJS"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-python-plain colored draggable-icon"
-                  :style="getIconStyle('webDev', 17)"
-                  title="Python"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-django-plain colored draggable-icon"
-                  :style="getIconStyle('webDev', 18)"
-                  title="Django"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-amazonwebservices-plain-wordmark colored draggable-icon"
-                  :style="getIconStyle('webDev', 19)"
-                  title="AWS Lambda"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-csharp-plain colored draggable-icon"
-                  :style="getIconStyle('webDev', 20)"
-                  title="C#"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-dotnetcore-plain colored draggable-icon"
-                  :style="getIconStyle('webDev', 21)"
-                  title="ASP.NET Core"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-graphql-plain colored draggable-icon"
-                  :style="getIconStyle('webDev', 22)"
-                  title="GraphQL"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
+
                 <i
                   class="devicon-mongodb-plain colored draggable-icon"
                   :style="getIconStyle('webDev', 23)"
                   title="MongoDB"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-mysql-plain colored draggable-icon"
-                  :style="getIconStyle('webDev', 24)"
-                  title="MySQL"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-postgresql-plain colored draggable-icon"
-                  :style="getIconStyle('webDev', 25)"
-                  title="PostgreSQL"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-linux-plain draggable-icon"
-                  :style="getIconStyle('webDev', 26)"
-                  title="Linux"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-docker-plain colored draggable-icon"
-                  :style="getIconStyle('webDev', 27)"
-                  title="Docker"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-nginx-original colored draggable-icon"
-                  :style="getIconStyle('webDev', 28)"
-                  title="Nginx"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-githubactions-plain colored draggable-icon"
-                  :style="getIconStyle('webDev', 29)"
-                  title="GitHub Actions"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-mocha-plain colored draggable-icon"
-                  :style="getIconStyle('webDev', 30)"
-                  title="Mocha"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-selenium-original draggable-icon"
-                  :style="getIconStyle('webDev', 31)"
-                  title="Selenium"
                   @mousedown="startDrag($event, $event.target)"
                   @touchstart="startDrag($event, $event.target)"
                 ></i>
@@ -376,68 +164,65 @@
               <div class="tech-stack">
                 <div class="tech-category">
                   <div class="tech-category-title">
-                    📱 Platforms & Languages
+                    📱 Software
                   </div>
                   <div class="tech-item">
-                    <span class="tech-label">Frameworks:</span>
-                    <span class="tech-value"
-                      >React Native, Expo, Android Studio, Xcode</span
-                    >
+                    <span class="tech-label">Tools: </span>
+                    <span class="tech-value">Aseprite </span>
                   </div>
                   <div class="tech-item">
-                    <span class="tech-label">Languages:</span>
+                    <span class="tech-label">Design Approach:</span>
                     <span class="tech-value"
-                      >JavaScript, TypeScript, Java, Kotlin, Swift,
-                      Objective-C</span
-                    >
-                  </div>
-                </div>
-
-                <div class="tech-category">
-                  <div class="tech-category-title">🔄 Development Approach</div>
-                  <div class="tech-item">
-                    <span class="tech-label">Cross-Platform:</span>
-                    <span class="tech-value"
-                      >React Native with Expo for rapid deployment</span
-                    >
-                  </div>
-                  <div class="tech-item">
-                    <span class="tech-label">Native:</span>
-                    <span class="tech-value"
-                      >Android Studio & Xcode for platform-specific
-                      features</span
+                      >Hand-drawn pixel-by-pixel, modular tileset and sprite
+                      design, animation via frame-by-frame</span
                     >
                   </div>
                 </div>
 
                 <div class="tech-category">
-                  <div class="tech-category-title">🎨 UI & State</div>
-                  <div class="tech-item">
-                    <span class="tech-label">Styling:</span>
-                    <span class="tech-value"
-                      >Styled Components, React Native Paper, Native Base,
-                      Tailwind</span
-                    >
+                  <div class="tech-category-title">
+                    🎨 Art Direction & Composition
                   </div>
                   <div class="tech-item">
-                    <span class="tech-label">State:</span>
-                    <span class="tech-value">Redux, Context API</span>
+                    <span class="tech-label">Themes:</span>
+                    <span class="tech-value"
+                      >Fantasy, sci-fi, platformer and cozy aesthetics
+                    </span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">Focus:</span>
+                    <span class="tech-value"
+                      >Readability, contrast, silhouette clarity
+                    </span>
                   </div>
                 </div>
 
                 <div class="tech-category">
-                  <div class="tech-category-title">⚙️ Backend & APIs</div>
+                  <div class="tech-category-title">
+                    ⚙️ Testing & Optimization
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">Engines Supported:</span>
+                    <span class="tech-value">Unity, RPG Maker</span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">Export Formats:</span>
+                    <span class="tech-value">PNG sequences, sprite sheets</span>
+                  </div>
+                </div>
+
+                <div class="tech-category">
+                  <div class="tech-category-title">🗂️ Asset Types</div>
                   <div class="tech-value">
-                    REST API, GraphQL, Axios, Fetch • Node.js, Firebase, AWS
-                    Lambda
-                  </div>
-                </div>
-
-                <div class="tech-category">
-                  <div class="tech-category-title">🚀 Testing & Deployment</div>
-                  <div class="tech-value">
-                    Jest, React Native Testing Library • Google Play Console,
-                    TestFlight, App Store Connect
+                    <ul>
+                      <li>
+                        Characters (Idle, Run, Attack, and Special animations)
+                      </li>
+                      <li>Tilesets (Grounds, Props)</li>
+                      <li>Backgrounds and Parallax Layers</li>
+                      <li>UI Elements (Icons, Buttons, Indicators)</li>
+                      <li>Visual FX (Explosions, Magic, Particles)</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -604,68 +389,66 @@
               <!-- Left Side: Text Content -->
               <div class="tech-stack">
                 <div class="tech-category">
-                  <div class="tech-category-title">🎮 Engine & Languages</div>
+                  <div class="tech-category-title">
+                    💻 Core Tools & Languages
+                  </div>
                   <div class="tech-item">
                     <span class="tech-label">Core:</span>
                     <span class="tech-value"
-                      >Unity (C#), ShaderLab for materials and custom
-                      effects</span
-                    >
+                      >WordPress, Google Docs, Notion</span
+                    
                   </div>
                 </div>
 
                 <div class="tech-category">
-                  <div class="tech-category-title">🎯 Development Focus</div>
+                  <div class="tech-category-title">🧭 Content Focus</div>
                   <div class="tech-value">
-                    Gameplay mechanics, UI/UX systems, player input, physics
-                    interactions, scene optimization
+                    Blog articles, landing pages, website copy, social media captions, SEO-friendly storytelling
                   </div>
                 </div>
 
                 <div class="tech-category">
                   <div class="tech-category-title">
-                    🏗️ Architecture & Patterns
+                    🏗️ Research & Strategy
                   </div>
                   <div class="tech-value">
-                    Component-based architecture, ScriptableObjects, MVC and
-                    event-driven systems
+                    Keyword research, topic clustering, search intent mapping
                   </div>
                 </div>
 
                 <div class="tech-category">
                   <div class="tech-category-title">🎨 Asset Workflow</div>
                   <div class="tech-value">
-                    3D models, textures, animations • Blender, Adobe Photoshop
+                   Canva for graphics, Grammarly and Hemingway for editing, Google Trends and Search Console for insights
                   </div>
                 </div>
 
                 <div class="tech-category">
                   <div class="tech-category-title">
-                    ⚡ Performance & Deployment
+                   ⚙️ Performance & Optimization
                   </div>
                   <div class="tech-item">
                     <span class="tech-label">Optimization:</span>
                     <span class="tech-value"
-                      >Memory management, frame rate profiling, build size
-                      reduction, mobile tuning</span
-                    >
+                      >Keyword placement, readability improvement, metadata tuning, and content updates
+                   </span>
                   </div>
                   <div class="tech-item">
                     <span class="tech-label">Platforms:</span>
-                    <span class="tech-value">PC, Android, WebGL</span>
+                    <span class="tech-value">WordPress</span>
                   </div>
                   <div class="tech-item">
-                    <span class="tech-label">Version Control:</span>
+                    <span class="tech-label">Writing Tools</span>
                     <span class="tech-value"
-                      >Git, GitHub, Unity Collaborate</span
-                    >
+                      >Hemingway Editor, SurferSEO Content Editor, Google Docs, Grammarly</span>
+                    
                   </div>
                 </div>
 
                 <div class="tech-category">
-                  <div class="tech-category-title">🛠️ Unity Tools</div>
+                  <div class="tech-category-title">📝️ Writing Tools </div>
                   <div class="tech-value">
-                    Unity Profiler, Cinemachine, Timeline, TextMeshPro
+                    Hemingway Editor, SurferSEO Content Editor, Google Docs
                   </div>
                 </div>
               </div>
@@ -752,6 +535,7 @@
               </div>
             </div>
           </div>
+          </div>
         </transition>
         <svg
           class="separator-line"
@@ -791,60 +575,44 @@
               <div class="tech-stack">
                 <div class="tech-category">
                   <div class="tech-category-title">
-                    📋 Project Management & Methodology
+                    🗂️ Content Planning & Methodology
                   </div>
                   <div class="tech-item">
                     <span class="tech-label">Tools:</span>
                     <span class="tech-value"
-                      >Jira, Confluence, Trello, Linear, Notion</span
-                    >
+                      >Jira, Google Docs, SurferSEO</span>
+                    
                   </div>
                   <div class="tech-item">
-                    <span class="tech-label">Methodology:</span>
+                    <span class="tech-label">💬 Collaboration & Communication</span
+                    >
                     <span class="tech-value"
-                      >Scrum Master, Agile practices</span
+                      > Discord, Google Meet, Notion comments, shared docs for team feedback
+                  </span
                     >
                   </div>
                 </div>
 
                 <div class="tech-category">
                   <div class="tech-category-title">
-                    💬 Team Collaboration & Communication
+                   📊 Research & Analysis
                   </div>
                   <div class="tech-value">
-                    Slack, Discord, Microsoft Teams, Google Meet
+                 Google Keyword Planner, Ahrefs (beginner level), Google Trends, Search Console
                   </div>
                 </div>
 
                 <div class="tech-category">
-                  <div class="tech-category-title">🔄 Version Control</div>
-                  <div class="tech-value">Git, GitHub, GitLab</div>
-                </div>
-
-                <div class="tech-category">
-                  <div class="tech-category-title">
-                    🤖 AI-Assisted Development & Creative
-                  </div>
-                  <div class="tech-value">
-                    AI Agent Prompting, ChatGPT, GitHub Copilot, Cursor,
-                    Midjourney
-                  </div>
+                  <div class="tech-category-title">🧠 AI-Assisted Writing & Ideation </div>
+                  <div class="tech-value"> Grammarly, Frase </div>
                 </div>
 
                 <div class="tech-category">
                   <div class="tech-category-title">
-                    🎨 Design & Creative Tools
+                🎨 Design & Visual Support
                   </div>
                   <div class="tech-value">
-                    Figma (design inspection, Dev Mode, prototyping), Adobe
-                    Photoshop, XD, Illustrator, Canva
-                  </div>
-                </div>
-
-                <div class="tech-category">
-                  <div class="tech-category-title">🎬 Video & Media</div>
-                  <div class="tech-value">
-                    Adobe Premiere Pro, After Effects
+                   Canva
                   </div>
                 </div>
 
@@ -853,19 +621,10 @@
                     📝 Documentation & Productivity
                   </div>
                   <div class="tech-value">
-                    Google Suite (Docs, Sheets, Drive, Meet), Microsoft 365,
-                    Notion
+                  Google Suite (Docs, Sheets, Drive), Notion, ClickUp
                   </div>
                 </div>
-
-                <div class="tech-category">
-                  <div class="tech-category-title">
-                    ⚡ Workflow & Automation
-                  </div>
-                  <div class="tech-value">
-                    Zapier, Make (Integromat), GitHub Actions
-                  </div>
-                </div>
+            
               </div>
 
               <!-- Right Side: Icon Display -->

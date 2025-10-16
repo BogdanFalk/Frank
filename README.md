@@ -1,4 +1,4 @@
-# Bogdan Falk - Portfolio Website
+# Alexandra Sicoe- Portfolio Website
 
 > A modern, high-performance portfolio website showcasing full-stack software engineering projects and expertise.
 
@@ -28,6 +28,7 @@
 ## Installation
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
@@ -57,14 +58,17 @@ This will generate static files in the `dist/spa` directory.
 After building the project, follow these steps to deploy to cPanel:
 
 1. **Build the project**:
+
    ```bash
    npm run build
    ```
 
 2. **Locate the build files**:
+
    - All files will be in the `dist/spa` directory
 
 3. **Upload to cPanel**:
+
    - Log in to your cPanel account
    - Navigate to "File Manager"
    - Go to your `public_html` directory (or subdirectory for subdomain)
@@ -132,13 +136,13 @@ Frank/
 
 ## 🌐 Browser Support
 
-| Browser | Version |
-|---------|---------|
-| Chrome  | Latest 2 versions |
-| Firefox | Latest 2 versions |
-| Safari  | Latest 2 versions |
-| Edge    | Latest 2 versions |
-| iOS Safari | Latest 2 versions |
+| Browser       | Version           |
+| ------------- | ----------------- |
+| Chrome        | Latest 2 versions |
+| Firefox       | Latest 2 versions |
+| Safari        | Latest 2 versions |
+| Edge          | Latest 2 versions |
+| iOS Safari    | Latest 2 versions |
 | Chrome Mobile | Latest 2 versions |
 
 ## 📊 Performance
@@ -170,11 +174,11 @@ This project is open source and available under the MIT License.
 ## 📧 Contact
 
 **Bogdan Falk**
-- Email: frank@unseenmedia.ro
-- Phone: +40 742 14 31 31
+
+- Email: sicoealexandra97@gmail.com
+- Phone: +40 724 35 54 02
 - GitHub: [@BogdanFalk](https://github.com/BogdanFalk)
 
 ---
 
 Built with ❤️ using Vue.js 3 and Quasar Framework | © 2025 Bogdan Falk
-
