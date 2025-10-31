@@ -157,25 +157,24 @@
             <minus-icon v-else />
           </button>
         </div>
+
         <transition name="drawer">
           <div v-if="expandedSkills.mobile" class="skill-content">
             <div class="tech-stack-layout">
               <!-- Left Side: Text Content -->
               <div class="tech-stack">
                 <div class="tech-category">
-                  <div class="tech-category-title">
-                    📱 Software
-                  </div>
+                  <div class="tech-category-title">📱 Software</div>
                   <div class="tech-item">
-                    <span class="tech-label">Tools: </span>
-                    <span class="tech-value">Aseprite </span>
+                    <span class="tech-label">Tools:</span>
+                    <span class="tech-value">Aseprite</span>
                   </div>
                   <div class="tech-item">
                     <span class="tech-label">Design Approach:</span>
-                    <span class="tech-value"
-                      >Hand-drawn pixel-by-pixel, modular tileset and sprite
-                      design, animation via frame-by-frame</span
-                    >
+                    <span class="tech-value">
+                      Hand-drawn pixel-by-pixel, modular tileset and sprite
+                      design, animation via frame-by-frame
+                    </span>
                   </div>
                 </div>
 
@@ -185,14 +184,14 @@
                   </div>
                   <div class="tech-item">
                     <span class="tech-label">Themes:</span>
-                    <span class="tech-value"
-                      >Fantasy, sci-fi, platformer and cozy aesthetics
+                    <span class="tech-value">
+                      Fantasy, sci-fi, platformer and cozy aesthetics
                     </span>
                   </div>
                   <div class="tech-item">
                     <span class="tech-label">Focus:</span>
-                    <span class="tech-value"
-                      >Readability, contrast, silhouette clarity
+                    <span class="tech-value">
+                      Readability, contrast, silhouette clarity
                     </span>
                   </div>
                 </div>
@@ -227,131 +226,68 @@
                 </div>
               </div>
 
-              <!-- Right Side: Icon Display -->
-              <div
-                class="tech-icons-display"
-                @mousemove="onDrag"
-                @touchmove="onDrag"
-                @mouseup="endDrag"
-                @touchend="endDrag"
-                @mouseleave="endDrag"
-              >
-                <i
-                  class="devicon-react-original colored draggable-icon"
-                  :style="getIconStyle('mobile', 0)"
-                  title="React Native"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-javascript-plain colored draggable-icon"
-                  :style="getIconStyle('mobile', 1)"
-                  title="JavaScript"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-typescript-plain colored draggable-icon"
-                  :style="getIconStyle('mobile', 2)"
-                  title="TypeScript"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-java-plain colored draggable-icon"
-                  :style="getIconStyle('mobile', 3)"
-                  title="Java"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-kotlin-plain colored draggable-icon"
-                  :style="getIconStyle('mobile', 4)"
-                  title="Kotlin"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-swift-plain colored draggable-icon"
-                  :style="getIconStyle('mobile', 5)"
-                  title="Swift"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-objectivec-plain draggable-icon"
-                  :style="getIconStyle('mobile', 6)"
-                  title="Objective-C"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-android-plain colored draggable-icon"
-                  :style="getIconStyle('mobile', 7)"
-                  title="Android"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-apple-original draggable-icon"
-                  :style="getIconStyle('mobile', 8)"
-                  title="iOS/Xcode"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-redux-original colored draggable-icon"
-                  :style="getIconStyle('mobile', 9)"
-                  title="Redux"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-graphql-plain colored draggable-icon"
-                  :style="getIconStyle('mobile', 10)"
-                  title="GraphQL"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-nodejs-plain colored draggable-icon"
-                  :style="getIconStyle('mobile', 11)"
-                  title="Node.js"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-firebase-plain colored draggable-icon"
-                  :style="getIconStyle('mobile', 12)"
-                  title="Firebase"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-amazonwebservices-plain-wordmark colored draggable-icon"
-                  :style="getIconStyle('mobile', 13)"
-                  title="AWS"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-jest-plain colored draggable-icon"
-                  :style="getIconStyle('mobile', 14)"
-                  title="Jest"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-axios-plain colored draggable-icon"
-                  :style="getIconStyle('mobile', 15)"
-                  title="Axios"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
+              <!-- Right Side: Quasar Carousel -->
+              <div class="tech-icons-display carousel-container">
+                <q-carousel
+                  v-model="carouselSlide"
+                  arrows
+                  animated
+                  swipeable
+                  transition-prev="slide-right"
+                  transition-next="slide-left"
+                  class="bg-grey-2 rounded-borders shadow-md"
+                  height="260px"
+                >
+                  <q-carousel-slide name="1" class="column flex-center">
+                    <img
+                      src="/assets/aseprite-icon.png"
+                      alt="Aseprite"
+                      width="64"
+                    />
+                    <div class="q-mt-md text-subtitle1">Aseprite</div>
+                  </q-carousel-slide>
+
+                  <q-carousel-slide name="2" class="column flex-center">
+                    <img
+                      src="/assets/pixel-tileset.png"
+                      alt="Tileset Example"
+                      width="64"
+                    />
+                    <div class="q-mt-md text-subtitle1">Tileset Design</div>
+                  </q-carousel-slide>
+
+                  <q-carousel-slide name="3" class="column flex-center">
+                    <img
+                      src="/assets/pixel-character.png"
+                      alt="Character Sprite"
+                      width="64"
+                    />
+                    <div class="q-mt-md text-subtitle1">Character Sprites</div>
+                  </q-carousel-slide>
+
+                  <q-carousel-slide name="4" class="column flex-center">
+                    <img
+                      src="/assets/pixel-background.png"
+                      alt="Background Scene"
+                      width="64"
+                    />
+                    <div class="q-mt-md text-subtitle1">Backgrounds</div>
+                  </q-carousel-slide>
+
+                  <q-carousel-slide name="5" class="column flex-center">
+                    <img
+                      src="/assets/pixel-ui.png"
+                      alt="UI Elements"
+                      width="64"
+                    />
+                    <div class="q-mt-md text-subtitle1">UI Elements</div>
+                  </q-carousel-slide>
+                </q-carousel>
               </div>
             </div>
           </div>
         </transition>
+
         <svg
           class="separator-line"
           width="1235"
@@ -383,6 +319,7 @@
             <minus-icon v-else />
           </button>
         </div>
+
         <transition name="drawer">
           <div v-if="expandedSkills.gameDev" class="skill-content">
             <div class="tech-stack-layout">
@@ -396,21 +333,20 @@
                     <span class="tech-label">Core:</span>
                     <span class="tech-value"
                       >WordPress, Google Docs, Notion</span
-                    
+                    >
                   </div>
                 </div>
 
                 <div class="tech-category">
                   <div class="tech-category-title">🧭 Content Focus</div>
                   <div class="tech-value">
-                    Blog articles, landing pages, website copy, social media captions, SEO-friendly storytelling
+                    Blog articles, landing pages, website copy, social media
+                    captions, SEO-friendly storytelling
                   </div>
                 </div>
 
                 <div class="tech-category">
-                  <div class="tech-category-title">
-                    🏗️ Research & Strategy
-                  </div>
+                  <div class="tech-category-title">🏗️ Research & Strategy</div>
                   <div class="tech-value">
                     Keyword research, topic clustering, search intent mapping
                   </div>
@@ -419,34 +355,37 @@
                 <div class="tech-category">
                   <div class="tech-category-title">🎨 Asset Workflow</div>
                   <div class="tech-value">
-                   Canva for graphics, Grammarly and Hemingway for editing, Google Trends and Search Console for insights
+                    Canva for graphics, Grammarly and Hemingway for editing,
+                    Google Trends and Search Console for insights
                   </div>
                 </div>
 
                 <div class="tech-category">
                   <div class="tech-category-title">
-                   ⚙️ Performance & Optimization
+                    ⚙️ Performance & Optimization
                   </div>
                   <div class="tech-item">
                     <span class="tech-label">Optimization:</span>
-                    <span class="tech-value"
-                      >Keyword placement, readability improvement, metadata tuning, and content updates
-                   </span>
+                    <span class="tech-value">
+                      Keyword placement, readability improvement, metadata
+                      tuning, and content updates
+                    </span>
                   </div>
                   <div class="tech-item">
                     <span class="tech-label">Platforms:</span>
                     <span class="tech-value">WordPress</span>
                   </div>
                   <div class="tech-item">
-                    <span class="tech-label">Writing Tools</span>
-                    <span class="tech-value"
-                      >Hemingway Editor, SurferSEO Content Editor, Google Docs, Grammarly</span>
-                    
+                    <span class="tech-label">Writing Tools:</span>
+                    <span class="tech-value">
+                      Hemingway Editor, SurferSEO Content Editor, Google Docs,
+                      Grammarly
+                    </span>
                   </div>
                 </div>
 
                 <div class="tech-category">
-                  <div class="tech-category-title">📝️ Writing Tools </div>
+                  <div class="tech-category-title">📝 Writing Tools</div>
                   <div class="tech-value">
                     Hemingway Editor, SurferSEO Content Editor, Google Docs
                   </div>
@@ -535,8 +474,8 @@
               </div>
             </div>
           </div>
-          </div>
         </transition>
+
         <svg
           class="separator-line"
           width="1235"
@@ -579,40 +518,42 @@
                   </div>
                   <div class="tech-item">
                     <span class="tech-label">Tools:</span>
-                    <span class="tech-value"
-                      >Jira, Google Docs, SurferSEO</span>
-                    
+                    <span class="tech-value">Jira, Google Docs, SurferSEO</span>
                   </div>
                   <div class="tech-item">
-                    <span class="tech-label">💬 Collaboration & Communication</span
+                    <span class="tech-label"
+                      >💬 Collaboration & Communication</span
                     >
-                    <span class="tech-value"
-                      > Discord, Google Meet, Notion comments, shared docs for team feedback
-                  </span
-                    >
+                    <span class="tech-value">
+                      Discord, Google Meet, Notion comments, shared docs for
+                      team feedback
+                    </span>
                   </div>
                 </div>
 
                 <div class="tech-category">
                   <div class="tech-category-title">
-                   📊 Research & Analysis
+                    📊 Research & Analysis
                   </div>
                   <div class="tech-value">
-                 Google Keyword Planner, Ahrefs (beginner level), Google Trends, Search Console
+                    Google Keyword Planner, Ahrefs (beginner level), Google
+                    Trends, Search Console
                   </div>
-                </div>
-
-                <div class="tech-category">
-                  <div class="tech-category-title">🧠 AI-Assisted Writing & Ideation </div>
-                  <div class="tech-value"> Grammarly, Frase </div>
                 </div>
 
                 <div class="tech-category">
                   <div class="tech-category-title">
-                🎨 Design & Visual Support
+                    🧠 AI-Assisted Writing & Ideation
+                  </div>
+                  <div class="tech-value">Grammarly, Frase</div>
+                </div>
+
+                <div class="tech-category">
+                  <div class="tech-category-title">
+                    🎨 Design & Visual Support
                   </div>
                   <div class="tech-value">
-                   Canva
+                    Canva
                   </div>
                 </div>
 
@@ -621,10 +562,9 @@
                     📝 Documentation & Productivity
                   </div>
                   <div class="tech-value">
-                  Google Suite (Docs, Sheets, Drive), Notion, ClickUp
+                    Google Suite (Docs, Sheets, Drive), Notion, ClickUp
                   </div>
                 </div>
-            
               </div>
 
               <!-- Right Side: Icon Display -->
@@ -781,6 +721,10 @@ export default defineComponent({
   },
 
   setup() {
+    // Carousel slide control for the 2D Game Art section
+    const carouselSlide = ref("1");
+
+    // Expand/collapse control for skill drawers
     const expandedSkills = ref({
       webDev: true,
       mobile: false,
@@ -788,8 +732,9 @@ export default defineComponent({
       softSkills: false,
     });
 
+    // Store random icon positions for each skill group
     const iconPositions = ref({
-      webDev: [], // Will be initialized on mount
+      webDev: [], // Initialized on mount
     });
 
     const generateRandomPositions = (iconCount) => {
@@ -800,42 +745,38 @@ export default defineComponent({
         positions.push({
           top: Math.random() * (100 - 2 * containerPadding) + containerPadding,
           left: Math.random() * (100 - 2 * containerPadding) + containerPadding,
-          rotation: Math.random() * 16 - 8, // -8 to +8 degrees
+          rotation: Math.random() * 16 - 8, // -8° to +8°
         });
       }
       return positions;
     };
 
     const toggleSkill = (skill) => {
-      // Close all other skills first
+      // Close all other sections first
       Object.keys(expandedSkills.value).forEach((key) => {
-        if (key !== skill) {
-          expandedSkills.value[key] = false;
-        }
+        if (key !== skill) expandedSkills.value[key] = false;
       });
-      // Toggle the clicked skill
-      const wasOpen = expandedSkills.value[skill];
-      expandedSkills.value[skill] = !expandedSkills.value[skill];
 
-      // Generate new random positions when opening a drawer
+      // Toggle the selected one
+      const wasOpen = expandedSkills.value[skill];
+      expandedSkills.value[skill] = !wasOpen;
+
+      // Regenerate icon positions when opening
       if (!wasOpen && expandedSkills.value[skill]) {
-        // Determine icon count based on skill type
-        let iconCount = 32; // default for webDev
+        let iconCount = 32;
         if (skill === "mobile") iconCount = 16;
         if (skill === "gameDev") iconCount = 10;
         if (skill === "softSkills") iconCount = 16;
-
         iconPositions.value[skill] = generateRandomPositions(iconCount);
       }
     };
 
-    // Draggable icon functionality
+    // === DRAGGABLE ICON LOGIC ===
     const draggedIcon = ref(null);
     const dragOffset = ref({ x: 0, y: 0 });
 
     const startDrag = (event, iconElement) => {
       const rect = iconElement.getBoundingClientRect();
-      const parentRect = iconElement.parentElement.getBoundingClientRect();
 
       draggedIcon.value = iconElement;
       dragOffset.value = {
@@ -851,11 +792,8 @@ export default defineComponent({
     const onDrag = (event) => {
       if (!draggedIcon.value) return;
 
-      const clientX =
-        event.clientX || (event.touches && event.touches[0].clientX);
-      const clientY =
-        event.clientY || (event.touches && event.touches[0].clientY);
-
+      const clientX = event.clientX || event.touches?.[0]?.clientX;
+      const clientY = event.clientY || event.touches?.[0]?.clientY;
       if (!clientX || !clientY) return;
 
       const parentRect = draggedIcon.value.parentElement.getBoundingClientRect();
@@ -865,14 +803,11 @@ export default defineComponent({
       let newLeft = clientX - parentRect.left - dragOffset.value.x;
       let newTop = clientY - parentRect.top - dragOffset.value.y;
 
-      // Keep within bounds
       newLeft = Math.max(0, Math.min(newLeft, parentRect.width - iconWidth));
       newTop = Math.max(0, Math.min(newTop, parentRect.height - iconHeight));
 
       draggedIcon.value.style.left = `${newLeft}px`;
       draggedIcon.value.style.top = `${newTop}px`;
-
-      event.preventDefault();
     };
 
     const endDrag = () => {
@@ -884,10 +819,8 @@ export default defineComponent({
     };
 
     const getIconStyle = (skill, index) => {
-      if (!iconPositions.value[skill] || !iconPositions.value[skill][index]) {
-        return {};
-      }
-      const pos = iconPositions.value[skill][index];
+      const pos = iconPositions.value[skill]?.[index];
+      if (!pos) return {};
       return {
         top: `${pos.top}%`,
         left: `${pos.left}%`,
@@ -895,12 +828,13 @@ export default defineComponent({
       };
     };
 
-    // Initialize webDev positions on mount since it starts expanded
+    // Initialize webDev positions (starts expanded)
     onMounted(() => {
       iconPositions.value.webDev = generateRandomPositions(32);
     });
 
     return {
+      carouselSlide,
       expandedSkills,
       toggleSkill,
       iconPositions,
