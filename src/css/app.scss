@@ -9,6 +9,7 @@ $info: #3b82f6;
 $warning: #f59e0b;
 
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=IBM+Plex+Serif:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=VT323&display=swap');
 
 body {
   font-family: "IBM Plex Sans", sans-serif;
@@ -71,11 +72,12 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1.8rem;
-  padding: 2.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.03), rgba(248, 113, 113, 0.03), rgba(168, 85, 247, 0.03));
+  border: 2px solid rgba(251, 146, 60, 0.1);
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  min-height: 550px;
 }
 
 /* Workflow */
@@ -184,11 +186,12 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1.8rem;
-  padding: 2.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.03), rgba(248, 113, 113, 0.03), rgba(168, 85, 247, 0.03));
+  border: 2px solid rgba(251, 146, 60, 0.1);
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  min-height: 550px;
 }
 
 /* Workflow */

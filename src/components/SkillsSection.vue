@@ -477,14 +477,14 @@
                   </div>
                   <div class="tool-item">
                     <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Grammarly_logo.svg"
+                      src="https://cdn.worldvectorlogo.com/logos/grammarly-1.svg"
                       alt="Grammarly"
                     />
                     <span>Grammarly</span>
                   </div>
                   <div class="tool-item">
                     <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Canva_Logo.svg"
+                      src="https://public.canva.site/logo/media/dfb96cc174513093cd6ed61489ccb750.svg"
                       alt="Canva"
                     />
                     <span>Canva</span>
@@ -603,7 +603,59 @@
                 </div>
               </div>
 
-              <!-- Right Side: Icon Display -->
+              <!-- Right Side: Crossword Puzzle -->
+              <div class="tech-icons-display crossword-container">
+                <div class="crossword-puzzle">
+                  <div class="crossword-title">🧩 Soft Skills Puzzle</div>
+                  <div class="crossword-layout">
+                    <div class="crossword-clues-left">
+                      <div class="clues-column">
+                        <div class="clues-title">Across</div>
+                        <div
+                          v-for="clue in acrossClues"
+                          :key="'across-' + clue.num"
+                          :class="['clue-item', { 'active': clue.active }]"
+                          @click="selectClue(clue, 'across')"
+                        >
+                          <span class="clue-num">{{ clue.num }}.</span>
+                          <span class="clue-text">{{ clue.text }}</span>
+                        </div>
+                      </div>
+                      <div class="clues-column">
+                        <div class="clues-title">Down</div>
+                        <div
+                          v-for="clue in downClues"
+                          :key="'down-' + clue.num"
+                          :class="['clue-item', { 'active': clue.active }]"
+                          @click="selectClue(clue, 'down')"
+                        >
+                          <span class="clue-num">{{ clue.num }}.</span>
+                          <span class="clue-text">{{ clue.text }}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="crossword-grid">
+                      <div
+                        v-for="(cell, index) in crosswordGrid"
+                        :key="index"
+                        :class="['crossword-cell', { 'filled': cell.filled, 'active': cell.active, 'number': cell.number }]"
+                        @click="selectCell(index)"
+                      >
+                        <span v-if="cell.number" class="cell-number">{{ cell.number }}</span>
+                        <input
+                          v-if="cell.filled"
+                          v-model="cell.value"
+                          :ref="el => setInputRef(el, index)"
+                          :maxlength="1"
+                          class="cell-input"
+                          @input="handleInput(index, $event)"
+                          @keydown="handleKeydown(index, $event)"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </transition>
@@ -619,6 +671,17 @@
         </svg>
       </div>
     </div>
+    
+    <!-- Completion Message Overlay -->
+    <transition name="fade">
+      <div v-if="showCompletionMessage" class="completion-overlay">
+        <div class="completion-message">
+          <div class="completion-emoji">🎉</div>
+          <div class="completion-text">Amazing! You've completed the puzzle!</div>
+          <div class="completion-subtext">You've got great soft skills! ✨</div>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -646,6 +709,295 @@ export default defineComponent({
       gameDev: false,
       softSkills: false,
     });
+
+    // === CROSSWORD PUZZLE LOGIC ===
+    const GRID_ROWS = 7;
+    const GRID_COLS = 4;
+    const crosswordGrid = ref([]);
+    const inputRefs = ref([]);
+    const currentDirection = ref('across'); // 'across' or 'down'
+    const currentCellIndex = ref(null);
+    const isCompleted = ref(false);
+    const showCompletionMessage = ref(false);
+    let completionTimer = null;
+
+    // Crossword puzzle data - soft skills themed (properly intersecting, no shared starts)
+    // TEAM (2,1) across: T(2,1), E(2,2), A(2,3), M(2,4) - starts at (2,1) only
+    // PEOPLE (1,2) down: P(1,2), E(2,2), O(3,2), P(4,2), L(5,2), E(6,2) - starts at (1,2) only, intersects TEAM at E(2,2) ✓
+    // WORK (3,1) across: W(3,1), O(3,2), R(3,3), K(3,4) - starts at (3,1) only, intersects PEOPLE at O(3,2) ✓
+    // PARTNER (1,3) down: P(1,3), A(2,3), R(3,3), T(4,3), N(5,3), E(6,3), R(7,3) - starts at (1,3) only, intersects TEAM at A(2,3) and WORK at R(3,3) ✓
+    const crosswordData = {
+      words: [
+        { word: 'TEAM', row: 2, col: 1, dir: 'across', num: 1 },
+        { word: 'WORK', row: 3, col: 1, dir: 'across', num: 3 },
+        { word: 'PEOPLE', row: 1, col: 2, dir: 'down', num: 1 },
+        { word: 'PARTNER', row: 1, col: 3, dir: 'down', num: 2 },
+      ],
+      clues: {
+        across: [
+          { num: 1, text: 'Working together' },
+          { num: 3, text: 'Tasks and effort' },
+        ],
+        down: [
+          { num: 1, text: 'Those you collaborate with' },
+          { num: 2, text: 'Collaborator' },
+        ],
+      },
+    };
+
+    const initializeCrossword = () => {
+      // Initialize empty grid (7 rows × 4 columns)
+      crosswordGrid.value = Array(GRID_ROWS * GRID_COLS).fill(null).map(() => ({
+        filled: false,
+        value: '',
+        number: null,
+        active: false,
+        across: null,
+        down: null,
+      }));
+
+      // Place words on grid and store correct answers
+      crosswordData.words.forEach(({ word, row, col, dir, num }) => {
+        for (let i = 0; i < word.length; i++) {
+          const index = (row - 1) * GRID_COLS + (col - 1) + (dir === 'across' ? i : i * GRID_COLS);
+          if (index >= 0 && index < crosswordGrid.value.length) {
+            crosswordGrid.value[index].filled = true;
+            crosswordGrid.value[index].value = '';
+            crosswordGrid.value[index].correctLetter = word[i]; // Store correct letter
+            if (dir === 'across') {
+              crosswordGrid.value[index].across = num;
+            } else {
+              crosswordGrid.value[index].down = num;
+            }
+            // Set number on first cell
+            if (i === 0) {
+              const existingNum = crosswordGrid.value[index].number;
+              crosswordGrid.value[index].number = existingNum || num;
+            }
+          }
+        }
+      });
+    };
+
+    const checkCompletion = () => {
+      const allFilled = crosswordGrid.value
+        .filter(cell => cell.filled)
+        .every(cell => cell.value && cell.value === cell.correctLetter);
+      
+      if (allFilled && !isCompleted.value) {
+        isCompleted.value = true;
+        showCompletionMessage.value = true;
+        
+        // Hide after 5 seconds
+        if (completionTimer) {
+          clearTimeout(completionTimer);
+        }
+        completionTimer = setTimeout(() => {
+          showCompletionMessage.value = false;
+        }, 5000);
+      } else if (!allFilled && isCompleted.value) {
+        // Reset if puzzle becomes incomplete
+        isCompleted.value = false;
+        showCompletionMessage.value = false;
+        if (completionTimer) {
+          clearTimeout(completionTimer);
+        }
+      }
+    };
+
+    const setInputRef = (el, index) => {
+      if (el) {
+        inputRefs.value[index] = el;
+      }
+    };
+
+    const selectCell = (index) => {
+      const cell = crosswordGrid.value[index];
+      if (!cell.filled) return;
+
+      // Clear previous active cells
+      crosswordGrid.value.forEach(c => c.active = false);
+      acrossClues.value.forEach(c => c.active = false);
+      downClues.value.forEach(c => c.active = false);
+
+      cell.active = true;
+      currentCellIndex.value = index;
+
+      // Priority: If cell has a number, prioritize showing the word that starts there
+      // If both across and down start here, prefer across first
+      if (cell.number) {
+        // Check if this is the start of an across word
+        const acrossWord = crosswordData.words.find(w => 
+          w.dir === 'across' && w.num === cell.across &&
+          (w.row - 1) * GRID_COLS + (w.col - 1) === index
+        );
+        // Check if this is the start of a down word
+        const downWord = crosswordData.words.find(w => 
+          w.dir === 'down' && w.num === cell.down &&
+          (w.row - 1) * GRID_COLS + (w.col - 1) === index
+        );
+        
+        if (acrossWord) {
+          currentDirection.value = 'across';
+          // Highlight the across clue
+          const clue = acrossClues.value.find(c => c.num === cell.across);
+          if (clue) clue.active = true;
+        } else if (downWord) {
+          currentDirection.value = 'down';
+          // Highlight the down clue
+          const clue = downClues.value.find(c => c.num === cell.down);
+          if (clue) clue.active = true;
+        } else if (cell.across && cell.down) {
+          // Both exist but neither starts here - use current direction or default to across
+          if (currentDirection.value !== 'across' && currentDirection.value !== 'down') {
+            currentDirection.value = 'across';
+          }
+        } else if (cell.across) {
+          currentDirection.value = 'across';
+        } else if (cell.down) {
+          currentDirection.value = 'down';
+        }
+      } else {
+        // No number - use existing logic
+        if (cell.across && cell.down) {
+          // Use current direction if both exist
+        } else if (cell.across) {
+          currentDirection.value = 'across';
+        } else if (cell.down) {
+          currentDirection.value = 'down';
+        }
+      }
+
+      highlightWord(index);
+      focusInput(index);
+    };
+
+    const selectClue = (clue, direction) => {
+      currentDirection.value = direction;
+      
+      // Clear previous active states
+      crosswordGrid.value.forEach(c => c.active = false);
+      acrossClues.value.forEach(c => c.active = false);
+      downClues.value.forEach(c => c.active = false);
+
+      // Find and activate first cell of this clue
+      const wordData = crosswordData.words.find(w => 
+        w.num === clue.num && w.dir === direction
+      );
+      if (wordData) {
+        const index = (wordData.row - 1) * GRID_COLS + (wordData.col - 1);
+        selectCell(index);
+        clue.active = true;
+      }
+    };
+
+    const highlightWord = (index) => {
+      const cell = crosswordGrid.value[index];
+      const clueNum = currentDirection.value === 'across' ? cell.across : cell.down;
+      if (!clueNum) return;
+
+      const wordData = crosswordData.words.find(w => 
+        w.num === clueNum && w.dir === currentDirection.value
+      );
+      if (!wordData) return;
+
+      for (let i = 0; i < wordData.word.length; i++) {
+        const cellIndex = (wordData.row - 1) * GRID_COLS + (wordData.col - 1) + 
+          (currentDirection.value === 'across' ? i : i * GRID_COLS);
+        if (cellIndex >= 0 && cellIndex < crosswordGrid.value.length) {
+          crosswordGrid.value[cellIndex].active = true;
+        }
+      }
+    };
+
+    const focusInput = (index) => {
+      if (inputRefs.value[index]) {
+        inputRefs.value[index].focus();
+      }
+    };
+
+    const handleInput = (index, event) => {
+      const value = event.target.value.toUpperCase().replace(/[^A-Z]/g, '');
+      crosswordGrid.value[index].value = value;
+
+      if (value) {
+        moveToNextCell(index);
+      }
+      
+      // Check if puzzle is completed
+      checkCompletion();
+    };
+
+    const handleKeydown = (index, event) => {
+      if (event.key === 'Backspace' && !crosswordGrid.value[index].value) {
+        moveToPreviousCell(index);
+        checkCompletion(); // Re-check completion after deletion
+      } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        currentDirection.value = 'across';
+        moveToAdjacentCell(index, event.key === 'ArrowRight' ? 1 : -1);
+      } else if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+        event.preventDefault();
+        currentDirection.value = 'down';
+        moveToAdjacentCell(index, event.key === 'ArrowDown' ? GRID_COLS : -GRID_COLS);
+      }
+    };
+
+    const moveToNextCell = (index) => {
+      const cell = crosswordGrid.value[index];
+      const clueNum = currentDirection.value === 'across' ? cell.across : cell.down;
+      if (!clueNum) return;
+
+      const wordData = crosswordData.words.find(w => 
+        w.num === clueNum && w.dir === currentDirection.value
+      );
+      if (!wordData) return;
+
+      const currentPos = index % GRID_COLS;
+      const currentRow = Math.floor(index / GRID_COLS);
+      const wordStartCol = wordData.col - 1;
+      const wordStartRow = wordData.row - 1;
+      const wordPos = currentDirection.value === 'across' 
+        ? currentPos - wordStartCol 
+        : currentRow - wordStartRow;
+
+      if (wordPos < wordData.word.length - 1) {
+        const nextIndex = index + (currentDirection.value === 'across' ? 1 : GRID_COLS);
+        if (nextIndex < crosswordGrid.value.length && crosswordGrid.value[nextIndex].filled) {
+          selectCell(nextIndex);
+        }
+      }
+    };
+
+    const moveToPreviousCell = (index) => {
+      const cell = crosswordGrid.value[index];
+      const clueNum = currentDirection.value === 'across' ? cell.across : cell.down;
+      if (!clueNum) return;
+
+      const wordData = crosswordData.words.find(w => 
+        w.num === clueNum && w.dir === currentDirection.value
+      );
+      if (!wordData) return;
+
+      const prevIndex = index - (currentDirection.value === 'across' ? 1 : GRID_COLS);
+      if (prevIndex >= 0 && crosswordGrid.value[prevIndex]?.filled) {
+        selectCell(prevIndex);
+        if (inputRefs.value[prevIndex]) {
+          inputRefs.value[prevIndex].select();
+        }
+      }
+    };
+
+    const moveToAdjacentCell = (index, offset) => {
+      const newIndex = index + offset;
+      if (newIndex >= 0 && newIndex < crosswordGrid.value.length && 
+          crosswordGrid.value[newIndex]?.filled) {
+        selectCell(newIndex);
+      }
+    };
+
+    const acrossClues = ref(crosswordData.clues.across.map(c => ({ ...c, active: false })));
+    const downClues = ref(crosswordData.clues.down.map(c => ({ ...c, active: false })));
 
     // Store random icon positions for each skill group
     const iconPositions = ref({
@@ -743,9 +1095,10 @@ export default defineComponent({
       };
     };
 
-    // Initialize webDev positions (starts expanded)
+    // Initialize webDev positions and crossword when component mounts
     onMounted(() => {
       iconPositions.value.webDev = generateRandomPositions(32);
+      initializeCrossword();
     });
 
     return {
@@ -757,6 +1110,17 @@ export default defineComponent({
       startDrag,
       onDrag,
       endDrag,
+      // Crossword puzzle
+      crosswordGrid,
+      acrossClues,
+      downClues,
+      selectCell,
+      selectClue,
+      setInputRef,
+      handleInput,
+      handleKeydown,
+      isCompleted,
+      showCompletionMessage,
     };
   },
 });

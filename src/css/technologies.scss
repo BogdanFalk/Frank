@@ -216,6 +216,55 @@
   }
 }
 
+/* Carousel Arrow/Chevron Styling */
+.carousel-container {
+  overflow: hidden;
+  
+  .q-carousel {
+    overflow: hidden;
+  }
+  
+  .q-carousel__slide {
+    overflow: hidden;
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    
+    .text-subtitle1 {
+      color: rgba(251, 146, 60, 0.9) !important;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 600;
+      font-size: 24px;
+    }
+  }
+  
+  .q-carousel__arrow,
+  .q-carousel__arrow--left,
+  .q-carousel__arrow--right,
+  .q-btn[aria-label*="Previous"],
+  .q-btn[aria-label*="Next"] {
+    color: rgba(251, 146, 60, 1) !important;
+    background: transparent !important;
+    border: none !important;
+    
+    .q-icon {
+      color: rgba(251, 146, 60, 0.9) !important;
+      
+    }
+    
+    &:hover {
+      color: rgba(251, 146, 60, 1) !important;
+      
+      .q-icon {
+        color: rgba(251, 146, 60, 1) !important;
+      }
+    }
+  }
+}
+
 /* Icon Display Area - Organic Constellation Layout */
 .tech-icons-display {
   position: relative;
@@ -386,6 +435,266 @@
     font-size: 14px;
     line-height: 22px;
     padding-left: 12px;
+  }
+}
+
+/* Crossword Puzzle Styles */
+.crossword-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  min-height: 550px;
+  max-height: 600px;
+}
+
+.crossword-puzzle {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.crossword-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #171717;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.crossword-layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.crossword-clues-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 200px;
+  flex-shrink: 0;
+}
+
+.crossword-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 4/7;
+  background: rgba(23, 23, 23, 0.1);
+  padding: 2px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.crossword-cell {
+  position: relative;
+  aspect-ratio: 1;
+  background: white;
+  border: 1px solid rgba(23, 23, 23, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &.filled {
+    background: white;
+    cursor: text;
+  }
+
+  &.active {
+    background: rgba(251, 146, 60, 0.15);
+    border-color: rgba(251, 146, 60, 0.5);
+    box-shadow: 0 0 0 2px rgba(251, 146, 60, 0.3);
+  }
+
+  &:hover.filled {
+    background: rgba(251, 146, 60, 0.1);
+  }
+
+  .cell-number {
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #171717;
+    font-family: 'IBM Plex Sans', sans-serif;
+    z-index: 1;
+  }
+
+  .cell-input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #171717;
+    text-transform: uppercase;
+    outline: none;
+    padding: 0;
+    cursor: text;
+
+    &:focus {
+      background: rgba(251, 146, 60, 0.2);
+    }
+  }
+}
+
+.crossword-clues {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 5px;
+  max-height: 180px;
+  overflow-y: auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    max-height: 150px;
+  }
+}
+
+.clues-column {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.clues-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #171717;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.clue-item {
+  display: flex;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 12px;
+  line-height: 1.3;
+
+  &:hover {
+    background: rgba(251, 146, 60, 0.1);
+  }
+
+  &.active {
+    background: rgba(251, 146, 60, 0.2);
+    border-left: 3px solid rgba(251, 146, 60, 0.8);
+    padding-left: 8px;
+  }
+
+  .clue-num {
+    font-weight: 700;
+    color: rgba(251, 146, 60, 0.8);
+    min-width: 18px;
+    font-size: 11px;
+  }
+
+  .clue-text {
+    color: rgba(23, 23, 23, 0.8);
+    flex: 1;
+  }
+}
+
+/* Completion Message Overlay */
+.completion-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.completion-message {
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.95), rgba(248, 113, 113, 0.95));
+  border: 3px solid rgba(251, 146, 60, 0.8);
+  border-radius: 16px;
+  padding: 40px 50px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90%;
+  animation: scaleIn 0.4s ease-out;
+  
+  .completion-emoji {
+    font-size: 64px;
+    margin-bottom: 16px;
+    animation: bounce 1s ease-in-out infinite;
+  }
+  
+  .completion-text {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #171717;
+    margin-bottom: 12px;
+  }
+  
+  .completion-subtext {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    color: rgba(23, 23, 23, 0.9);
+    font-weight: 500;
+  }
+}
+
+/* Fade transition for overlay */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
 

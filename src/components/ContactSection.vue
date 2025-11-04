@@ -57,92 +57,92 @@
       <div class="form-content">
         <div class="form-title">any project?</div>
 
-      <form @submit.prevent="onSubmit" class="contact-form">
-        <div class="form-row">
-          <div class="form-field">
-            <label for="name">Name</label>
-            <input type="text" id="name" v-model="form.name" required />
+        <form @submit.prevent="onSubmit" class="contact-form">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input type="text" id="name" v-model="form.name" required />
+              <svg
+                class="field-underline"
+                width="280"
+                height="2"
+                viewBox="0 0 280 2"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 1H280" stroke="white" stroke-width="1.5" />
+              </svg>
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" v-model="form.email" required />
+              <svg
+                class="field-underline"
+                width="280"
+                height="2"
+                viewBox="0 0 280 2"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 1H280" stroke="white" stroke-width="1.5" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="form-field message-field">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              v-model="form.message"
+              required
+              rows="3"
+            ></textarea>
             <svg
               class="field-underline"
-              width="280"
+              width="605"
               height="2"
-              viewBox="0 0 280 2"
+              viewBox="0 0 605 2"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M0 1H280" stroke="white" stroke-width="1.5" />
+              <path d="M0 1H605" stroke="white" stroke-width="1.5" />
             </svg>
           </div>
 
-          <div class="form-field">
-            <label for="email">Email</label>
-            <input type="email" id="email" v-model="form.email" required />
-            <svg
-              class="field-underline"
-              width="280"
-              height="2"
-              viewBox="0 0 280 2"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M0 1H280" stroke="white" stroke-width="1.5" />
-            </svg>
-          </div>
-        </div>
-
-        <div class="form-field message-field">
-          <label for="message">Message</label>
-          <textarea
-            id="message"
-            v-model="form.message"
-            required
-            rows="3"
-          ></textarea>
-          <svg
-            class="field-underline"
-            width="605"
-            height="2"
-            viewBox="0 0 605 2"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M0 1H605" stroke="white" stroke-width="1.5" />
-          </svg>
-        </div>
-
-        <button type="submit" class="submit-btn" :disabled="isSubmitting">
-          <span>{{ isSubmitting ? "Sending..." : "Submit now" }}</span>
-          <div class="submit-icon" v-if="!isSubmitting">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect width="24" height="24" fill="url(#paint0_linear_contact)" />
-              <path
-                d="M8.99922 4.80078V6.72078H15.3256L4.19922 17.8472L5.55282 19.2008L16.6792 8.07438V14.4008H18.5992V4.80078H8.99922Z"
-                fill="white"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_contact"
-                  x1="22.638"
-                  y1="16.8886"
-                  x2="1.86848"
-                  y2="16.8323"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#1e3a8a" />
-                  <stop offset="0.520264" stop-color="#2563eb" />
-                  <stop offset="1" stop-color="#14b8a6" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-        </button>
-      </form>
+          <button type="submit" class="submit-btn" :disabled="isSubmitting">
+            <span>{{ isSubmitting ? "Sending..." : "Submit now" }}</span>
+            <div class="submit-icon" v-if="!isSubmitting">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="24" height="24" fill="url(#paint0_linear_contact)" />
+                <path
+                  d="M8.99922 4.80078V6.72078H15.3256L4.19922 17.8472L5.55282 19.2008L16.6792 8.07438V14.4008H18.5992V4.80078H8.99922Z"
+                  fill="white"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_contact"
+                    x1="22.638"
+                    y1="16.8886"
+                    x2="1.86848"
+                    y2="16.8323"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#1e3a8a" />
+                    <stop offset="0.520264" stop-color="#2563eb" />
+                    <stop offset="1" stop-color="#14b8a6" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </button>
+        </form>
       </div>
     </div>
   </div>

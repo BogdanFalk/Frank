@@ -1,49 +1,32 @@
 <template>
   <div class="hero-container">
-    <!-- Decorative SVG behind title -->
-    <div class="decorative-gradient-shape">
-      <svg
-        width="216"
-        height="136"
-        viewBox="0 0 216 136"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M215.637 2.06902e-06L0 124.498C100.654 160.028 196.291 104.812 215.637 2.06902e-06Z"
-          fill="url(#paint0_linear_1_575)"
-        />
-        <defs>
-          <linearGradient
-            id="paint0_linear_1_575"
-            x1="224.856"
-            y1="44.0991"
-            x2="37.2265"
-            y2="150.04"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#1e3a8a" />
-            <stop offset="0.520264" stop-color="#2563eb" />
-            <stop offset="1" stop-color="#14b8a6" />
-          </linearGradient>
-        </defs>
-      </svg>
-    </div>
+    
 
     <!-- Content Area -->
     <div class="content-area">
       <div class="text-content">
         <!-- Main Title -->
         <div class="main-title">
-          <span class="main-title-normal">My name<br />is </span>
+          <span class="main-title-normal"><span ref="animatedM" class="animated-m">M</span>y name<br />is </span>
           <span class="main-title-bold">Alexandra<br />Sicoe...</span>
+          <!-- Decorative GIF behind title -->
+          <div class="decorative-gradient-shape">
+            <img 
+              ref="dogImage" 
+              :src="dogGif" 
+              alt="Pixel Art Dog"
+              @load="onImageLoad"
+            />
+          </div>
         </div>
 
         <!-- Subtitle -->
         <div class="subtitle">
           <span class="subtitle-bold italic"
-            >SEO Specialist and Pixel Artist</span
+            >SEO Specialist </span
           >
+          <span class="subtitle-normal">and </span>
+          <span class="subtitle-bold italic pixel-font">Pixel Artist</span>
           <span class="subtitle-normal"> based in Romania.</span>
         </div>
 
@@ -176,11 +159,12 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent, ref, onMounted, onUnmounted, nextTick } from "vue";
 import { scroll } from "quasar";
 import UnseenMediaIcon from "./UnseenMediaIcon.vue";
 import GitHubIcon from "./GitHubIcon.vue";
 import LinkedInIcon from "./LinkedInIcon.vue";
+import dogGif from "assets/Dog_Letter_M.gif";
 
 const { getScrollTarget, setVerticalScrollPosition } = scroll;
 
@@ -194,6 +178,39 @@ export default defineComponent({
   },
 
   setup() {
+    const dogImage = ref(null);
+    const animatedM = ref(null);
+    let syncInterval = null;
+
+    const restartMAnimation = () => {
+      if (animatedM.value) {
+        // Restart the M animation
+        animatedM.value.style.animation = 'none';
+        // Force reflow
+        void animatedM.value.offsetWidth;
+        animatedM.value.style.animation = '';
+      }
+    };
+
+    const startSync = () => {
+      // Start the M animation when image loads (GIF starts playing)
+      restartMAnimation();
+      // Restart every 2 seconds to keep in sync with GIF (2 frames × 1s each = 2s loop)
+      if (syncInterval) {
+        clearInterval(syncInterval);
+      }
+      syncInterval = setInterval(() => {
+        restartMAnimation();
+      }, 2000);
+    };
+
+    const onImageLoad = () => {
+      // When GIF loads and starts playing, sync the M animation
+      nextTick(() => {
+        startSync();
+      });
+    };
+
     const scrollToProjects = () => {
       const element = document.getElementById("projects");
       if (element) {
@@ -204,8 +221,26 @@ export default defineComponent({
       }
     };
 
+    onMounted(() => {
+      // If image is already loaded (cached), start sync immediately
+      nextTick(() => {
+        if (dogImage.value && dogImage.value.complete) {
+          startSync();
+        }
+      });
+    });
+
+    onUnmounted(() => {
+      if (syncInterval) {
+        clearInterval(syncInterval);
+      }
+    });
+
     return {
       scrollToProjects,
+      dogGif,
+      dogImage,
+      animatedM,
     };
   },
 });
