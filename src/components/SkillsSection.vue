@@ -236,51 +236,79 @@
                   transition-prev="slide-right"
                   transition-next="slide-left"
                   class="bg-grey-2 rounded-borders shadow-md"
-                  height="260px"
+                  height="500px"
                 >
                   <q-carousel-slide name="1" class="column flex-center">
                     <img
-                      src="/assets/aseprite-icon.png"
-                      alt="Aseprite"
-                      width="64"
+                      src="/PixelArt/Forest Assets Scene.png"
+                      alt="Forest Assets Scene"
+                      width="500"
                     />
-                    <div class="q-mt-md text-subtitle1">Aseprite</div>
+                    <div class="q-mt-md text-subtitle1">Forest Scene</div>
                   </q-carousel-slide>
 
                   <q-carousel-slide name="2" class="column flex-center">
                     <img
-                      src="/assets/pixel-tileset.png"
-                      alt="Tileset Example"
-                      width="64"
+                      src="/PixelArt/Forest Assets 32x32.png"
+                      alt="Forest Assets 32x32"
+                      width="500"
                     />
-                    <div class="q-mt-md text-subtitle1">Tileset Design</div>
+                    <div class="q-mt-md text-subtitle1">
+                      Forest Assets 32x32
+                    </div>
                   </q-carousel-slide>
 
                   <q-carousel-slide name="3" class="column flex-center">
                     <img
-                      src="/assets/pixel-character.png"
-                      alt="Character Sprite"
-                      width="64"
+                      src="/PixelArt/Pastel Pink City.png"
+                      alt="Pastel Cityscape"
+                      width="600"
                     />
-                    <div class="q-mt-md text-subtitle1">Character Sprites</div>
+                    <div class="q-mt-md text-subtitle1">
+                      Pastel Cityscape
+                    </div>
                   </q-carousel-slide>
 
                   <q-carousel-slide name="4" class="column flex-center">
                     <img
-                      src="/assets/pixel-background.png"
-                      alt="Background Scene"
-                      width="64"
+                      src="/PixelArt/Forest Parallax.png"
+                      alt="Top-down Forest Parallax"
+                      width="600"
                     />
-                    <div class="q-mt-md text-subtitle1">Backgrounds</div>
+                    <div class="q-mt-md text-subtitle1">
+                      Top-down Forest Parallax
+                    </div>
                   </q-carousel-slide>
 
                   <q-carousel-slide name="5" class="column flex-center">
                     <img
-                      src="/assets/pixel-ui.png"
-                      alt="UI Elements"
-                      width="64"
+                      src="/PixelArt/Forest.png"
+                      alt="Forest Background"
+                      width="600"
                     />
-                    <div class="q-mt-md text-subtitle1">UI Elements</div>
+                    <div class="q-mt-md text-subtitle1">Forest Background</div>
+                  </q-carousel-slide>
+
+                  <q-carousel-slide name="6" class="column flex-center">
+                    <img
+                      src="/PixelArt/Moon.png"
+                      alt="Whimsical Moon Background"
+                      width="600"
+                    />
+                    <div class="q-mt-md text-subtitle1">
+                      Whimsical Moon Background
+                    </div>
+                  </q-carousel-slide>
+
+                  <q-carousel-slide name="7" class="column flex-center">
+                    <img
+                      src="/PixelArt/Sunset.png"
+                      alt="Sunset Background"
+                      width="600"
+                    />
+                    <div class="q-mt-md text-subtitle1">
+                      Sunset Over the Sea Background
+                    </div>
                   </q-carousel-slide>
                 </q-carousel>
               </div>
@@ -392,85 +420,93 @@
                 </div>
               </div>
 
-              <!-- Right Side: Icon Display -->
-              <div
-                class="tech-icons-display"
-                @mousemove="onDrag"
-                @touchmove="onDrag"
-                @mouseup="endDrag"
-                @touchend="endDrag"
-                @mouseleave="endDrag"
-              >
-                <i
-                  class="devicon-unity-plain colored draggable-icon"
-                  :style="getIconStyle('gameDev', 0)"
-                  title="Unity"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-csharp-plain colored draggable-icon"
-                  :style="getIconStyle('gameDev', 1)"
-                  title="C#"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-dotnetcore-plain colored draggable-icon"
-                  :style="getIconStyle('gameDev', 2)"
-                  title=".NET"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-blender-original colored draggable-icon"
-                  :style="getIconStyle('gameDev', 3)"
-                  title="Blender"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-photoshop-plain colored draggable-icon"
-                  :style="getIconStyle('gameDev', 4)"
-                  title="Photoshop"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-git-plain colored draggable-icon"
-                  :style="getIconStyle('gameDev', 5)"
-                  title="Git"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-github-original colored draggable-icon"
-                  :style="getIconStyle('gameDev', 6)"
-                  title="GitHub"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-android-plain colored draggable-icon"
-                  :style="getIconStyle('gameDev', 7)"
-                  title="Android"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-windows11-original colored draggable-icon"
-                  :style="getIconStyle('gameDev', 8)"
-                  title="Windows/PC"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-html5-plain colored draggable-icon"
-                  :style="getIconStyle('gameDev', 9)"
-                  title="WebGL"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
+              <!-- Right Side: Visual Showcase -->
+              <div class="tech-visual-display">
+                <!-- Content Workflow -->
+                <div class="workflow-section">
+                  <div class="workflow-step">
+                    <span class="workflow-icon">🔍</span
+                    ><span class="workflow-text">Research</span>
+                  </div>
+                  <span class="workflow-arrow">→</span>
+                  <div class="workflow-step">
+                    <span class="workflow-icon">✍️</span
+                    ><span class="workflow-text">Write</span>
+                  </div>
+                  <span class="workflow-arrow">→</span>
+                  <div class="workflow-step">
+                    <span class="workflow-icon">🧠</span
+                    ><span class="workflow-text">Edit</span>
+                  </div>
+                  <span class="workflow-arrow">→</span>
+                  <div class="workflow-step">
+                    <span class="workflow-icon">🚀</span
+                    ><span class="workflow-text">Optimize</span>
+                  </div>
+                  <span class="workflow-arrow">→</span>
+                  <div class="workflow-step">
+                    <span class="workflow-icon">📊</span
+                    ><span class="workflow-text">Analyze</span>
+                  </div>
+                </div>
+
+                <!-- Skills Snapshot -->
+                <div class="skills-badges">
+                  <div class="badge">SEO Copywriting</div>
+                  <div class="badge">Content Strategy</div>
+                  <div class="badge">Keyword Research</div>
+                  <div class="badge">Readability Optimization</div>
+                  <div class="badge">WordPress Management</div>
+                </div>
+
+                <!-- Tools Showcase -->
+                <div class="tools-showcase">
+                  <div class="tool-item">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg"
+                      alt="WordPress"
+                    />
+                    <span>WordPress</span>
+                  </div>
+                  <div class="tool-item">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+                      alt="Google Docs"
+                    />
+                    <span>Google Docs</span>
+                  </div>
+                  <div class="tool-item">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Grammarly_logo.svg"
+                      alt="Grammarly"
+                    />
+                    <span>Grammarly</span>
+                  </div>
+                  <div class="tool-item">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Canva_Logo.svg"
+                      alt="Canva"
+                    />
+                    <span>Canva</span>
+                  </div>
+                </div>
+
+                <!-- Current Goals -->
+                <div class="content-preview">
+                  <div class="preview-header">Currently Improving</div>
+                  <ul class="learning-list">
+                    <li>🧭 Mastering keyword intent and clustering</li>
+                    <li>🪶 Practicing consistent tone and storytelling</li>
+                    <li>📈 Learning advanced SEO analytics tools</li>
+                    <li>🧰 Building a personal content workflow in Notion</li>
+                  </ul>
+                </div>
+
+                <!-- Tagline -->
+                <div class="content-quote">
+                  “Crafting clear, human-centered content that connects ideas
+                  with audiences.”
+                </div>
               </div>
             </div>
           </div>
@@ -568,127 +604,6 @@
               </div>
 
               <!-- Right Side: Icon Display -->
-              <div
-                class="tech-icons-display"
-                @mousemove="onDrag"
-                @touchmove="onDrag"
-                @mouseup="endDrag"
-                @touchend="endDrag"
-                @mouseleave="endDrag"
-              >
-                <i
-                  class="devicon-jira-plain colored draggable-icon"
-                  :style="getIconStyle('softSkills', 0)"
-                  title="Jira"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-confluence-original colored draggable-icon"
-                  :style="getIconStyle('softSkills', 1)"
-                  title="Confluence"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-trello-plain colored draggable-icon"
-                  :style="getIconStyle('softSkills', 2)"
-                  title="Trello"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-slack-plain colored draggable-icon"
-                  :style="getIconStyle('softSkills', 3)"
-                  title="Slack"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-git-plain colored draggable-icon"
-                  :style="getIconStyle('softSkills', 4)"
-                  title="Git"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-github-original colored draggable-icon"
-                  :style="getIconStyle('softSkills', 5)"
-                  title="GitHub"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-gitlab-plain colored draggable-icon"
-                  :style="getIconStyle('softSkills', 6)"
-                  title="GitLab"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-figma-plain colored draggable-icon"
-                  :style="getIconStyle('softSkills', 7)"
-                  title="Figma"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-photoshop-plain colored draggable-icon"
-                  :style="getIconStyle('softSkills', 8)"
-                  title="Photoshop"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-illustrator-plain colored draggable-icon"
-                  :style="getIconStyle('softSkills', 9)"
-                  title="Illustrator"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-xd-plain colored draggable-icon"
-                  :style="getIconStyle('softSkills', 10)"
-                  title="Adobe XD"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-premierepro-plain colored draggable-icon"
-                  :style="getIconStyle('softSkills', 11)"
-                  title="Premiere Pro"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-aftereffects-plain colored draggable-icon"
-                  :style="getIconStyle('softSkills', 12)"
-                  title="After Effects"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-canva-original colored draggable-icon"
-                  :style="getIconStyle('softSkills', 13)"
-                  title="Canva"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-notion-plain colored draggable-icon"
-                  :style="getIconStyle('softSkills', 14)"
-                  title="Notion"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-                <i
-                  class="devicon-google-plain colored draggable-icon"
-                  :style="getIconStyle('softSkills', 15)"
-                  title="Google Suite"
-                  @mousedown="startDrag($event, $event.target)"
-                  @touchstart="startDrag($event, $event.target)"
-                ></i>
-              </div>
             </div>
           </div>
         </transition>

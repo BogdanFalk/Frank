@@ -8,13 +8,10 @@
       </div>
       <div class="experience-bio">
         Hi! I’m Alex.<br />
-        I’m a digital creator with a strong foundation in SEO, content strategy,
-        and web development.
+        Digital creator blending SEO, web development, and pixel art to build
+        creative, high-performing projects.
         <br />
-        As an aspiring pixel artist, I create 2D assets, tilesets, environments,
-        and character sprites in Aseprite for top-down and platformer games.<br />
-        With hands-on experience in HTML, CSS, JavaScript, React, and WordPress,
-        I combine SEO expertise and creative design to build digital projects.
+        Got an idea? Let’s make it real.
       </div>
     </div>
 
